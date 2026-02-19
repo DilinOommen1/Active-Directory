@@ -7,7 +7,7 @@
 - Add, modify, delete and disable a user in Active Directory.
 - Find a user in our organization unit (OU) and unlock the account.
 - Resetting a user's password.
-- Managing various computers
+- Managing computers.
 - Add an organizational unit (OU) in the domain.
 - Delete an OU from our domain using advanced features.
 - Using Delegation Control and configuring PowerShell to see if it works.
@@ -70,16 +70,67 @@ Now you may think, this sounds way too easy and pointless. But in real world, mi
 
 # Delete a User
 
+For deleting a user, it works the same way. First, we must always disable the account first before anything else. This ensures that important things like credentials, group memberships and access tokens are take away from the user when not in use.
+
+And you may ask why should be delete an account if disabling is an option. Well to simplify, it’s to declutter the Active Directory. You could have 50-100 accounts in the OU of Sales and a new hire like Lisa Ann could have a similar name to ex-employee Lisa Annabell, this could lead to IT professionals thinking Lisa Annabell is an active employee and accidentally give her permission to confidential company data. 
+
+Access control records and following compliance controls are one of the biggest things companies must follow (SOX, HIPPA, NIST) and by following this good practice leads to maintaining security, reduce attack surfaces and keeping the directory clean
 
 
 
 
+# Find a user in (OU) and unlock the account.
+
+
+<img width="720" height="653" alt="Finding robert from OU" src="https://github.com/user-attachments/assets/ebabcbb6-e5f5-492f-b84c-033b5f2053f0" />
+
+- Say we have various Organizational Units called IT, Management, Marketing, R & D, Sales, and Students. And we need to find Robert because he accidentally locked his account.
+
+- Rather than clicking each OU one by one and scrolling till you find Robert, you can use the find feature to find the Robert you are looking for. *NOTE: make sure you right click on the main OU to look through all the OUs, if you right-click on sales or IT, it will search through users in that specific department only. *
+
+
+<img width="520" height="508" alt="Finding robert" src="https://github.com/user-attachments/assets/53804922-7718-44b8-96e2-231f51f8bfe6" />
+
+- We can then find Robert by typing in his name at the top and clicking "Enter" or "Find Now". A list of the results will show up at the bottom and you can find the correct person. *NOTE: mine only says Robert but in a real world scenario, typing in the full name is better to ensure the right person is being found*
+
+
+<img width="415" height="540" alt="Robert Properties" src="https://github.com/user-attachments/assets/189f7e0e-8605-407b-b09a-fa421cc129d6" />
+
+- Once you click on Robert a new page will pop-up, this page is where all of Robert’s properties are, what membership he has, his general information, account name, description, profile, etc. Notice under Account, you can see the unlock account is unchecked, only uncheck this when you can verify that the right user is by his workstation.
+
+
+<img width="415" height="540" alt="Unlock Robert&#39;s account" src="https://github.com/user-attachments/assets/4252d888-35b5-4d5f-9075-b1d08c2f0a3c" />
+
+- Once we have selected the unlock account, we must also ensure that the "User must change password at next logon" is also checked. Robert may have locked his account for entering the wrong password too many times and the Group Policy may have been trigged, this will allow Rober to choose and new password and hopefully he remembers this one better.
 
 
 
 
+# Resetting a user's password.
 
 
+<img width="520" height="508" alt="Finding robert" src="https://github.com/user-attachments/assets/0113cd3c-6f70-473d-aa4d-a961fb6815ad" />
+
+- You can reset a user's password in many ways, but this method is the best in my opinion just to ensure that you are modifying the right person's properties. You would first want to find the user like we did earlier.
+
+
+<img width="520" height="557" alt="Reset Robert Password" src="https://github.com/user-attachments/assets/5056a350-d8f9-49be-a985-89b172a4b9ad" />
+
+
+- Instead of clicking on Robert and pulling up his full properties, we can right click on his name and navigate to "Reset Password".
+
+
+<img width="530" height="510" alt="Window pops up for password reset" src="https://github.com/user-attachments/assets/24e377bb-ad5e-47a6-8f72-4d1bfecbaf53" />
+
+- A new pop-up window will show again, and it will prompt us to reset the password for Robert. Make sure you do something simple for Robert since he will need to change the password to something that is unique to him only.
+
+
+<img width="517" height="511" alt="New password for robert and unlocks account" src="https://github.com/user-attachments/assets/8191a0ee-8723-4512-acd3-9722bfd475ec" />
+
+- Once you have entered the simple password, ensure that the "User must change password at next logon" is checked (Not optional). Even though it says Account Lockout Status on this Domain Controller: Unlocked, I still checkmark it just to avoid any more confusion (Optional). Click Ok and make sure Robert is able to access his workstation properly.
+
+
+# Managing computers.
 
 
 
