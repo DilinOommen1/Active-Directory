@@ -1,6 +1,9 @@
 # Active-Directory Lab
 
 ## Objective
+The Active Directory Lab aims to establish a hands-on experience with core identity and access management tasks using Active Directory in a Windows environment. The primary focus is to practice real-world administration tasks, including managing users, computers, Organizational Units (OUs), delegation, and Group Policy. 
+
+The end goal of this lab is to simulate system administration and IAM responsibilities by securely managing identities, enforcing policies, and applying the principle of least privilege. These tasks demonstrates practical Active Directory skills that are suitable for help desk, system administration and IAM-focused roles.
 
 ## Table of Contents
 
@@ -130,7 +133,7 @@ Access control records and following compliance controls are one of the biggest 
 - Once you have entered the simple password, ensure that the "User must change password at next logon" is checked (Not optional). Even though it says Account Lockout Status on this Domain Controller: Unlocked, I still checkmark it just to avoid any more confusion (Optional). Click Ok and make sure Robert is able to access his workstation properly.
 
 
-# Managing computers.
+# Managing computers
 
 
 
