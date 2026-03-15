@@ -135,4 +135,3 @@ Access control records and following compliance controls are one of the biggest 
 
 # Managing computers
 **In Progess**
-![Test Image](https://via.placeholder.com/400)
